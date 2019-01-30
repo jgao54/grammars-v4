@@ -465,6 +465,9 @@ partitionDefinition
       ')'
       partitionOption*
       (subpartitionDefinition (',' subpartitionDefinition)*)?       #partitionComparision
+    | PARTITION uid VALUES LESS THAN
+      partitionDefinerAtom partitionOption*
+      (subpartitionDefinition (',' subpartitionDefinition)*)?       #partitionComparision
     | PARTITION uid VALUES IN
       '('
           partitionDefinerAtom (',' partitionDefinerAtom)*
